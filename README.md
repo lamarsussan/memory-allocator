@@ -2,22 +2,22 @@
 
 Dynamic memory allocator implemented in C++ on Linux.
 
-## Overview
+## Problem
 
-Implemented memory allocation functions and a buddy allocator with block splitting and merging.
+Implement dynamic memory allocation functionality without using the standard `malloc`, `free`, `calloc`, or `realloc` functions.
 
-## Technologies
+## Implementation
 
-- C++
-- Linux
-- `sbrk`
-- `mmap` / `munmap`
-
-## Key Concepts
-
-- Dynamic memory allocation
 - Metadata-based block management
-- Buddy allocation
-- Block splitting and merging
-- Heap management
-- Large allocations with `mmap`
+- Reuse of freed blocks
+- Buddy allocator with block splitting and merging
+- Heap allocation using `sbrk`
+- Large allocations using `mmap` and `munmap`
+
+## Setup
+
+Implemented and tested on Ubuntu 18.04 using `g++`.
+
+## Tests
+
+Tested using the provided course Makefile and automated test targets (`make test1`, `make test2`, `make test3`).
