@@ -17,7 +17,3 @@ Implement dynamic memory allocation functionality without using the standard `ma
 ## Setup
 
 Implemented and tested on Ubuntu 18.04 using `g++`.
-
-## Tests
-
-Tested using the provided course Makefile and automated test targets (`make test1`, `make test2`, `make test3`).
