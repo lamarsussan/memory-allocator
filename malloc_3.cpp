@@ -25,7 +25,7 @@ struct MallocMetadata {
 MallocMetadata* free_bins[MAX_ORDER + 1] = {NULL};
 bool is_heap_initialized = false;
 
-//globar counters ////////////////////////////////////////
+//global counters ////////////////////////////////////////
 size_t free_blocks_count = 0;
 size_t free_bytes_count = 0;
 size_t allocated_blocks_count = 0;
@@ -86,7 +86,6 @@ void init_blocks()
     heap_start = pool_start;
 
     char* index;
-   // size_t data_size;
     for(int i = 0; i < INITIAL_BLOCKS; i++)
     {
         index = (char*)pool_start + (i * MAX_BLOCK_SIZE);
@@ -96,7 +95,6 @@ void init_blocks()
         block->next = nullptr;
         block->prev = nullptr;
         add_to_free_bin(block, MAX_ORDER); //add to list in size 10
-    //  data_size = MAX_BLOCK_SIZE - sizeof(MallocMetadata);
     }
     allocated_blocks_count = INITIAL_BLOCKS;
     allocated_bytes_count = INITIAL_BLOCKS * (MAX_BLOCK_SIZE - sizeof(MallocMetadata));
@@ -121,7 +119,6 @@ void remove_from_free_bins(int order, MallocMetadata* block) {
             block->prev->next = block->next;
         }
     }
-    //remove the block we used - not exactly
     block->next = nullptr;
     block->prev = nullptr;
 }
@@ -284,7 +281,6 @@ void sfree(void* p){
     }
     //normal free
     block->is_free = true;
-   // allocated_bytes_count -= (block->size - sizeof(MallocMetadata));
     free_blocks_count++;
     free_bytes_count += (block->size - sizeof(MallocMetadata));
 
