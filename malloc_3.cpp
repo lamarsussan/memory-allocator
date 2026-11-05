@@ -245,7 +245,6 @@ void *smalloc(size_t size){
 
     split_block(block, target_order); //challenge 1
     block->is_free = false;
-   // allocated_bytes_count += (block->size - sizeof(MallocMetadata));
     return (void*)(block + 1);    //pointer to data payload in the block
 }
 
