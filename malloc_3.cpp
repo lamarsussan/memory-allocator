@@ -183,7 +183,6 @@ MallocMetadata* merge_blocks(MallocMetadata* block) {
         }
         int curr_order = find_order(buddy->size - sizeof (MallocMetadata));
         free_blocks_count--; //1 less free block after merge
-        //free_bytes_count -= (buddy->size - sizeof(MallocMetadata));
 
         remove_from_free_bins(curr_order, buddy);
         buddy->is_free = false; // no longer separate free
