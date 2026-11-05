@@ -130,7 +130,8 @@ MallocMetadata* find_free_block(int target_order) {
             MallocMetadata* block = free_bins[i]; // take first (lowest addr)
             remove_from_free_bins(i, block);
             free_blocks_count--;
-            free_bytes_count -= (block->size - sizeof(MallocMetadata));            return block;
+            free_bytes_count -= (block->size - sizeof(MallocMetadata));            
+            return block;
         }
     }
     return nullptr; // No block found
