@@ -22,6 +22,15 @@ The implementation demonstrates how memory is requested from the operating syste
 
 ---
 
+## 🎬 Live Demo
+
+A short demonstration of dynamic memory allocation, deallocation, and memory reuse using my custom C++ allocator.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/lamarsussan/memory-allocator/main/memory-allocator-demo.gif" alt="Memory Allocator Demo" width="850">
+</p>
+
+
 ## ✨ Key Features
 
 ### 🧩 Dynamic Memory Allocation
